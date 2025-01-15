@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JSONRPC Client</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>JSONRPC Client</h1>
+        <form method="post" class="mt-4">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label>Method:</label>
+                {{ form.method }}
+                {% if form.method.errors %}
+                    <div class="text-danger">{{ form.method.errors }}</div>
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                <label>Parameters (JSON):</label>
+                {{ form.params }}
+                {% if form.params.errors %}
+                    <div class="text-danger">{{ form.params.errors }}</div>
+                {% endif %}
+            </div>
+            <button type="submit" class="btn btn-primary">Send Request</button>
+        </form>
+
+        {% if response %}
+        <div class="mt-4">
+            <h3>Response:</h3>
+            {% if 'error' in response %}
+                <div class="alert alert-danger">
+                    Error: {{ response.error.message }}
+                </div>
+            {% else %}
+                <pre class="bg-light p-3 rounded">{{ response|pprint }}</pre>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
