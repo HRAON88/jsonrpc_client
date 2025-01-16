@@ -6,10 +6,10 @@ Django project for interacting with JSON-RPC 2.0 service using mutual TLS authen
 
 ### Windows
 ```bash
-git clone https://github.com/HRAON88/test_jsonrpc.git
+git clone https://github.com/HRAON88/jsonrpc_client.git
 ```
 ```bash
-cd test_jsonrpc
+cd jsonrpc_client
 ```
 ```bash
 python -m venv venv
@@ -26,10 +26,10 @@ python manage.py runserver
 
 ### Linux/MacOS
 ```bash
-git clone https://github.com/HRAON88/test_jsonrpc.git
+git clone https://github.com/HRAON88/jsonrpc_client.git
 ```
 ```bash 
-cd test_jsonrpc
+cd jsonrpc_client
 ```
 ```bash
 python3 -m venv venv
