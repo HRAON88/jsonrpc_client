@@ -13,6 +13,7 @@ class JsonRpcClient:
         self.request_id = 1
 
     def _create_temp_cert_files(self):
+        """Создание файлов из строки сертификатов"""
         cert_file = tempfile.NamedTemporaryFile(delete=False)
         key_file = tempfile.NamedTemporaryFile(delete=False)
 
@@ -29,6 +30,7 @@ class JsonRpcClient:
         os.unlink(key_file)
 
     def call_method(self, method, params=None):
+        """Вызов клиента"""
         if params is None:
             params = {}
 

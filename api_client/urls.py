@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import ApiView
+from .views import BaseApiView
 
 urlpatterns = [
-    path('', ApiView.as_view(), name='api_view'),
+    path('', BaseApiView.as_view(), name='api_view'),
 ]

@@ -6,7 +6,8 @@ from .forms import JsonRpcForm
 from jsonrpc.client import JsonRpcClient
 
 
-class ApiView(FormView):
+class BaseApiView(FormView):
+    """Базовая вьюшка для вызова методов"""
     template_name = 'api_client/index.html'
     form_class = JsonRpcForm
     success_url = '/'
